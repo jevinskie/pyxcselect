@@ -38,7 +38,7 @@ class _XCSelect:
         func = self.dylib.xcselect_get_version
         func.restype = ctypes.c_char_p
 
-        def handle_result(res, func, args) -> str:
+        def handle_result(res, func, args) -> Version:
             if not res:
                 raise RuntimeError("xcselect_get_version returned NULL")
             return Version(res.decode())
