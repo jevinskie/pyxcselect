@@ -28,6 +28,7 @@ dev = [
 ]
 
 [project.scripts]
+pyxcrun = "xcselect.tools.pyxcrun:main"
 pyxcselect = "xcselect.tools.pyxcselect:main"
 
 [project.urls]
