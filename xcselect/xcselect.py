@@ -36,6 +36,7 @@ class _XCSelect:
     def xcselect_version(self) -> Callable[[], Version]:
         assert self.dylib is not None
         func = self.dylib.xcselect_get_version
+        func.argtypes = ()
         func.restype = ctypes.c_char_p
 
         def handle_result(res, func, args) -> Version:
