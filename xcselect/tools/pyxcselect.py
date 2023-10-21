@@ -15,10 +15,10 @@ def real_main(args: argparse.Namespace) -> int:
     if args.version:
         print(Version(_version.version))
     elif args.xcselect_version:
-        print(xcselect.get_version())
+        print(xcselect.version())
     elif args.developer_dir:
-        path = xcselect.get_developer_dir_path()
-        print(path.path)
+        path = xcselect.developer_dir()
+        print(path())
         if verbose:
             print(f"from_env_var: {path.from_env_var}")
             print(f"from_command_line_tools: {path.from_command_line_tools}")
