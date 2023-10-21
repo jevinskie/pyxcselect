@@ -23,11 +23,11 @@ _PATH_MAX = 8 * 1024
 
 
 class _XCSelect:
-    _instance: Optional[Self]
-    dylib: Optional[ctypes.CDLL]
+    _instance: Optional[Self] = None
+    dylib: Optional[ctypes.CDLL] = None
 
     def __new__(cls, *args, **kwargs):
-        if not hasattr(cls, "_instance"):
+        if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.dylib = ctypes.CDLL("/usr/lib/libxcselect.dylib")
         return cls._instance
