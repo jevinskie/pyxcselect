@@ -1,0 +1,43 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61", "setuptools-scm>=8.0"]
+
+[project]
+authors = [
+  {name = "Jevin Sweval", email = "jevinsweval@gmail.com"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: MacOS"
+]
+dependencies = [
+  "attrs",
+  "packaging"
+]
+description = "Python bindings for libxcselect.dylib to find Xcode related paths"
+dynamic = ["version"]
+keywords = ["clang-format", "pre-commit", "theos", "logos", "ios-tweak"]
+license = {text = "BSD-2-Clause"}
+name = "pyxcselect"
+readme = {file = 'README.md', content-type = 'text/markdown'}
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+  "tox"
+]
+
+[project.scripts]
+pyxcselect = "xcselect.tools.pyxcselect:main"
+
+[project.urls]
+repository = "https://github.com/jevinskie/pyxcselect"
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.dynamic]
+version = {attr = "xcselect._version.__version__"}
+
+[tool.setuptools_scm]
+version_file = "xcselect/_version.py"

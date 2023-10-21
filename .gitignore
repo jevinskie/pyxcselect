@@ -1,0 +1,4 @@
+# Python
+**/__pycache__/
+/pyxcselect.egg-info/
+/xcselect/_version.py
